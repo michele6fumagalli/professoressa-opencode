@@ -1,0 +1,30 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // Modello principale: gpt-5-nano è gratuito su OpenCode Zen, senza uso dei dati per training
+  // PLACEHOLDER_1: Assicurarsi che l'account OpenCode Zen sia attivo e connesso con /connect
+  "model": "opencode/gpt-5-nano",
+  "small_model": "opencode/gpt-5-nano",
+
+  // Agente predefinito: la professoressa vede sempre questo agente all'avvio
+  "default_agent": "professoressa",
+
+  // Permessi: chiede conferma prima di eseguire comandi shell o modificare file
+  // Questo protegge da azioni accidentali
+  "permission": {
+    "bash": "ask",
+    "edit": "ask",
+    "webfetch": "allow"
+  },
+
+  // Istruzioni globali caricate ad ogni sessione
+  "instructions": [
+    "~/.config/opencode/AGENTS.md"
+  ],
+
+  // Aggiornamenti automatici abilitati
+  "autoupdate": true,
+
+  // Disabilita la condivisione delle conversazioni (documenti scolastici = privacy)
+  "share": "disabled"
+}
